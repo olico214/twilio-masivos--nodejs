@@ -3,11 +3,8 @@ import { executeQuery } from "@/app/libs/mysql";
 
 // Definimos el tipo para los params de la URL
 interface RouteParams {
-    params: {
-        id: string;
-    };
+    params: Promise<{ id: string }>;
 }
-
 
 
 export async function PUT(req: NextRequest, { params }: RouteParams) {
@@ -17,7 +14,7 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
         const { name, phone, categoryIds } = body;
 
         // 1. Validaciones de seguridad
-        if (isNaN(id)) {
+        if (isNaN(Number(id))) {
             return NextResponse.json({ message: "ID de cliente inválido" }, { status: 400 });
         }
 

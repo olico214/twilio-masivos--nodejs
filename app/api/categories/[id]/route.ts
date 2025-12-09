@@ -2,9 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { executeQuery } from "@/app/libs/mysql";
 
 interface RouteParams {
-    params: {
-        id: string;
-    };
+    params: Promise<{ id: string }>;
 }
 
 

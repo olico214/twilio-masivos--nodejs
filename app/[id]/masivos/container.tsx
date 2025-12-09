@@ -21,9 +21,9 @@ export default function MasivosContainer({ id }: { id?: string }) {
         return (
             <div className="p-4">
                 <div className="flex justify-between ">
-                    <ConfigurationComponent id={id} />
-                    <CategoriesComponent id={id} />
-                    <Clientes id={id} />
+                    <ConfigurationComponent id={id!} />
+                    <CategoriesComponent id={id!} />
+                    <Clientes id={id!} />
                 </div>
                 <div>
                     {/* <TemplatesGallery userId={id!} /> */}

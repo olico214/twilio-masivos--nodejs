@@ -3,9 +3,7 @@ import { executeQuery } from "@/app/libs/mysql";
 
 // Definimos el tipo para los params de la URL
 interface RouteParams {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 // --- GET: Leer la configuración del usuario ---

@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/bcrypt": "^6.0.0",
     "@types/node": "^20",
     "@types/papaparse": "^5.5.1",
     "@types/react": "^19",
