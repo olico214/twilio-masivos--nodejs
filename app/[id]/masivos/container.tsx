@@ -7,6 +7,7 @@ import Clientes from "./components/clientes/createEdit/clientes";
 import ConfigurationComponent from "./components/configuration/configurationComponent";
 import TemplatesGallery from "./components/templatesgallery/TemplatesGallery";
 import CampaignManager from "./components/campaingmanager/CampaignManager";
+import TwilioTemplatesManager from "./components/campaingmanager/TwilioTemplatesManager";
 
 export default function MasivosContainer({ id }: { id?: string }) {
     const [validateSession, setValidateSession] = useState(false);
@@ -20,12 +21,13 @@ export default function MasivosContainer({ id }: { id?: string }) {
 
         return (
             <div className="p-4">
-                <div className="flex justify-between ">
+                <div className="grid grid-cols-4 gap-4 ">
                     <ConfigurationComponent id={id!} />
                     <CategoriesComponent id={id!} />
                     <Clientes id={id!} />
+                    <TwilioTemplatesManager userId={id!} />
                 </div>
-                <div>
+                <div className="mt-8">
                     {/* <TemplatesGallery userId={id!} /> */}
                     <CampaignManager userId={id!} />
                 </div>
