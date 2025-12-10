@@ -15,6 +15,7 @@ interface Category {
 interface Client {
     id: number;
     name: string;
+    phone: string;
 }
 
 // --- ICONOS SVG SIMPLES (Para no depender de librerías externas) ---
