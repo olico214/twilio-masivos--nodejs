@@ -5,7 +5,7 @@ import { executeQuery } from "@/app/libs/mysql";
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const { email, password } = body;
+        const { email, password, id } = body;
 
         // 1. Validar entrada
         if (!email || !password) {
@@ -17,8 +17,8 @@ export async function POST(req: NextRequest) {
 
         // 2. Buscar usuario por EMAIL
         const result: any = await executeQuery({
-            query: "SELECT * FROM users WHERE email = ? AND active = 1",
-            values: [email],
+            query: "SELECT * FROM users WHERE email = ? and id = ? AND active = 1",
+            values: [email, id],
         });
 
         if (result.length === 0) {
