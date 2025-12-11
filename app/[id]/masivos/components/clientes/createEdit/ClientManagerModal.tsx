@@ -33,7 +33,7 @@ export default function ClientManagerModal({ isOpen, onClose, userId }: Props) {
 
     // --- ESTADOS DE LAZY LOAD ---
     const [visibleCount, setVisibleCount] = useState(20);
-    const observerTarget = useRef<HTMLDivElement>(null);
+    const observerTarget = useRef<HTMLTableRowElement>(null);
 
     // Formulario Individual
     const [formData, setFormData] = useState({
